@@ -10,41 +10,50 @@ package com.mb.tipcalculator;
 public final class R {
     public static final class attr {
     }
+    public static final class dimen {
+        public static final int top_padding=0x7f040000;
+    }
     public static final class drawable {
         public static final int ic_launcher=0x7f020000;
-        public static final int ic_menu_save=0x7f020001;
-        public static final int ic_tips_launcher=0x7f020002;
+        public static final int ic_launcher_dollar=0x7f020001;
+        public static final int ic_menu_save=0x7f020002;
+        public static final int ic_tips_launcher=0x7f020003;
     }
     public static final class id {
-        public static final int btnSaveTip=0x7f06000d;
-        public static final int etAmount=0x7f060000;
-        public static final int etPartySize=0x7f060006;
-        public static final int etTip=0x7f060003;
-        public static final int tvAmount=0x7f060001;
-        public static final int tvCalculatedTipKey=0x7f060008;
-        public static final int tvCalculatedTipValue=0x7f060004;
-        public static final int tvPartySize=0x7f060005;
-        public static final int tvPerPersonSummaryKey=0x7f06000b;
-        public static final int tvPerPersonSummaryValue=0x7f06000c;
-        public static final int tvSummary=0x7f060007;
-        public static final int tvTip=0x7f060002;
-        public static final int tvTotalBillKey=0x7f060009;
-        public static final int tvTotalBillValue=0x7f06000a;
+        public static final int btnSaveTip=0x7f08000b;
+        public static final int etAmount=0x7f08000a;
+        public static final int etPartySize=0x7f08000d;
+        public static final int etTip=0x7f08000c;
+        public static final int sbTip=0x7f080008;
+        public static final int tvAmount=0x7f080007;
+        public static final int tvCalculatedTipKey=0x7f080001;
+        public static final int tvCalculatedTipValue=0x7f080000;
+        public static final int tvPartySize=0x7f08000e;
+        public static final int tvPerPersonSummaryKey=0x7f080005;
+        public static final int tvPerPersonSummaryValue=0x7f080006;
+        public static final int tvSummary=0x7f080002;
+        public static final int tvTip=0x7f080009;
+        public static final int tvTotalBillKey=0x7f080003;
+        public static final int tvTotalBillValue=0x7f080004;
+    }
+    public static final class integer {
+        public static final int hundred=0x7f050000;
     }
     public static final class layout {
         public static final int activity_tip_calc=0x7f030000;
     }
     public static final class string {
-        public static final int amount_label=0x7f040002;
-        public static final int app_name=0x7f040000;
-        public static final int calculatedtip_label=0x7f040007;
-        public static final int hello_world=0x7f040001;
-        public static final int party_size_label=0x7f040004;
-        public static final int per_person_label=0x7f040009;
-        public static final int summary_albel=0x7f040005;
-        public static final int tip_label=0x7f040003;
-        public static final int total_bill_label=0x7f040008;
-        public static final int zero_label=0x7f040006;
+        public static final int amount_label=0x7f060002;
+        public static final int app_name=0x7f060000;
+        public static final int calculatedtip_label=0x7f060007;
+        public static final int hello_world=0x7f060001;
+        public static final int party_size_label=0x7f060004;
+        public static final int per_person_label=0x7f060009;
+        public static final int save_label=0x7f06000a;
+        public static final int summary_albel=0x7f060005;
+        public static final int tip_label=0x7f060003;
+        public static final int total_bill_label=0x7f060008;
+        public static final int zero_label=0x7f060006;
     }
     public static final class style {
         /** 
@@ -68,10 +77,10 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f050000;
+        public static final int AppBaseTheme=0x7f070000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f050001;
+        public static final int AppTheme=0x7f070001;
     }
 }

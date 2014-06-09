@@ -14,6 +14,8 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.SeekBar;
+import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
 
 public class TipCalcActivity extends Activity {
@@ -25,6 +27,8 @@ public class TipCalcActivity extends Activity {
 	TextView tvCalculatedTipValue;
 	TextView tvTotalBillValue;
 	TextView tvPerPersonSummaryValue;
+	
+	SeekBar sbTip;
 	
 	Button btnSaveTip;
 	
@@ -43,12 +47,41 @@ public class TipCalcActivity extends Activity {
 		tvTotalBillValue = (TextView) findViewById(R.id.tvTotalBillValue);
 		tvPerPersonSummaryValue = (TextView) findViewById(R.id.tvPerPersonSummaryValue);
 		
+		sbTip = (SeekBar) findViewById(R.id.sbTip);
+						
 		double initTipValue = initTipFromFile();
 		etTip.setText(String.valueOf(initTipValue));
+		sbTip.setProgress((int) initTipValue);
 		
 		setupTextChangeListeners();
+		setupSeekbarListeners();
 	}
 	
+	private void setupSeekbarListeners() {
+		sbTip.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
+			
+			@Override
+			public void onStopTrackingTouch(SeekBar seekBar) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void onStartTrackingTouch(SeekBar seekBar) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+				if (fromUser) {
+					etTip.setText(String.valueOf(progress));	
+				}
+			}
+		});
+		
+	}
+
 	private void setupTextChangeListeners() {
 		etAmount.addTextChangedListener(new TextWatcher() {
 			

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">vTip</string>
+    <string name="app_name">Tipper</string>
     <string name="hello_world">Hello world!</string>
     <string name="amount_label">Amount</string>
     <string name="tip_label">Tip (%)</string>
@@ -11,5 +11,6 @@
     <string name="calculatedtip_label">Total Tip $</string>
     <string name="total_bill_label">Total Bill $</string>
     <string name="per_person_label">Per Person $</string>
+    <string name="save_label">Save</string>
 
 </resources>
