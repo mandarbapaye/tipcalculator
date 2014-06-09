@@ -42,7 +42,7 @@
         android:layout_marginTop="20dp"
         android:text="@string/per_person_label"
         android:textAppearance="?android:attr/textAppearanceSmall" />
-    
+
     <TextView
         android:id="@+id/tvPerPersonSummaryValue"
         android:layout_width="wrap_content"
@@ -56,45 +56,12 @@
         android:id="@+id/tvAmount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
         android:paddingTop="@dimen/top_padding"
         android:text="@string/amount_label"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
-
-    <SeekBar
-        android:id="@+id/sbTip"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/tvTip"
-        android:layout_alignRight="@+id/etAmount"
-        android:layout_below="@+id/tvTip"
-        android:max="@integer/hundred" />
-
-    <ImageButton
-        android:id="@+id/btnSaveTip"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/sbTip"
-        android:layout_marginLeft="21dp"
-        android:layout_toRightOf="@+id/sbTip"
-        android:background="@null"
-        android:contentDescription="@string/save_label"
-        android:onClick="saveTipValueToFile"
-        android:src="@drawable/ic_menu_save" />
-
-    <EditText
-        android:id="@+id/etTip"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/sbTip"
-        android:layout_marginTop="14dp"
-        android:layout_toLeftOf="@+id/btnSaveTip"
-        android:ems="10"
-        android:inputType="numberDecimal" >
-
-        <requestFocus />
-    </EditText>
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/yellow" />
 
     <EditText
         android:id="@+id/etPartySize"
@@ -122,7 +89,8 @@
         android:layout_below="@+id/etAmount"
         android:layout_marginTop="14dp"
         android:text="@string/tip_label"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/yellow" />
 
     <TextView
         android:id="@+id/tvSummary"
@@ -135,16 +103,6 @@
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
-        android:id="@+id/tvPartySize"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/etPartySize"
-        android:layout_below="@+id/etTip"
-        android:layout_marginTop="14dp"
-        android:text="@string/party_size_label"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
-
-    <TextView
         android:id="@+id/tvCalculatedTipKey"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -153,5 +111,67 @@
         android:layout_toLeftOf="@+id/tvSummary"
         android:text="@string/calculatedtip_label"
         android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/tv0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tvTip"
+        android:layout_below="@+id/tvTip"
+        android:paddingTop="10dp"
+        android:text="@string/zeroDigit_label"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <SeekBar
+        android:id="@+id/sbTip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignRight="@+id/tv100"
+        android:layout_below="@+id/tv0"
+        android:max="@integer/fifty" />
+
+    <TextView
+        android:id="@+id/tv100"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tv0"
+        android:layout_alignBottom="@+id/tv0"
+        android:layout_toRightOf="@+id/etAmount"
+        android:text="@string/fifty_label"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/tvTipSeekBarValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tvSummary"
+        android:layout_below="@+id/sbTip"
+        android:layout_marginLeft="21dp"
+        android:text="@string/zero_label"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/light_green" />
+
+    <ImageButton
+        android:id="@+id/btnSaveTip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv100"
+        android:layout_toRightOf="@+id/sbTip"
+        android:background="@null"
+        android:contentDescription="@string/save_label"
+        android:onClick="saveTipValueToFile"
+        android:src="@drawable/ic_menu_save" />
+
+    <TextView
+        android:id="@+id/tvPartySize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/etPartySize"
+        android:layout_below="@+id/tvTipSeekBarValue"
+        android:layout_marginTop="16dp"
+        android:text="@string/party_size_label"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/yellow" />
 
 </RelativeLayout>

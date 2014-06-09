@@ -3,14 +3,17 @@
 
     <string name="app_name">Tipper</string>
     <string name="hello_world">Hello world!</string>
-    <string name="amount_label">Amount</string>
-    <string name="tip_label">Tip (%)</string>
-    <string name="party_size_label">Party Size</string>
+    <string name="amount_label">AMOUNT</string>
+    <string name="tip_label">TIP</string>
+    <string name="party_size_label">PARTY SIZE</string>
     <string name="summary_albel">Summary</string>
     <string name="zero_label">-</string>
     <string name="calculatedtip_label">Total Tip $</string>
     <string name="total_bill_label">Total Bill $</string>
     <string name="per_person_label">Per Person $</string>
     <string name="save_label">Save</string>
+    <string name="zeroDigit_label">0 %</string>
+    <string name="hundred_label">100 %</string>
+    <string name="fifty_label">50 %</string>
 
 </resources>

@@ -17,16 +17,17 @@ import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class TipCalcActivity extends Activity {
 	
 	EditText etAmount;
-	EditText etTip;
 	EditText etPartySize;
 	
 	TextView tvCalculatedTipValue;
 	TextView tvTotalBillValue;
 	TextView tvPerPersonSummaryValue;
+	TextView tvTipSeekBarValue;
 	
 	SeekBar sbTip;
 	
@@ -40,18 +41,18 @@ public class TipCalcActivity extends Activity {
 		setContentView(R.layout.activity_tip_calc);
 		
 		etAmount = (EditText) findViewById(R.id.etAmount);
-		etTip = (EditText) findViewById(R.id.etTip);
 		etPartySize = (EditText) findViewById(R.id.etPartySize);
 		
 		tvCalculatedTipValue = (TextView) findViewById(R.id.tvCalculatedTipValue);
 		tvTotalBillValue = (TextView) findViewById(R.id.tvTotalBillValue);
 		tvPerPersonSummaryValue = (TextView) findViewById(R.id.tvPerPersonSummaryValue);
+		tvTipSeekBarValue = (TextView) findViewById(R.id.tvTipSeekBarValue);
 		
 		sbTip = (SeekBar) findViewById(R.id.sbTip);
 						
 		double initTipValue = initTipFromFile();
-		etTip.setText(String.valueOf(initTipValue));
 		sbTip.setProgress((int) initTipValue);
+		tvTipSeekBarValue.setText(String.valueOf((int) initTipValue));
 		
 		setupTextChangeListeners();
 		setupSeekbarListeners();
@@ -74,9 +75,7 @@ public class TipCalcActivity extends Activity {
 			
 			@Override
 			public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-				if (fromUser) {
-					etTip.setText(String.valueOf(progress));	
-				}
+				tvTipSeekBarValue.setText(String.valueOf(progress));
 			}
 		});
 		
@@ -84,23 +83,6 @@ public class TipCalcActivity extends Activity {
 
 	private void setupTextChangeListeners() {
 		etAmount.addTextChangedListener(new TextWatcher() {
-			
-			@Override
-			public void onTextChanged(CharSequence s, int start, int before, int count) {
-			}
-			
-			@Override
-			public void beforeTextChanged(CharSequence s, int start, int count,
-					int after) {
-			}
-			
-			@Override
-			public void afterTextChanged(Editable s) {
-				doCalculationsAndUpdateResults();
-			}
-		});
-		
-		etTip.addTextChangedListener(new TextWatcher() {
 			
 			@Override
 			public void onTextChanged(CharSequence s, int start, int before, int count) {
@@ -159,9 +141,12 @@ public class TipCalcActivity extends Activity {
 		
 		try {
 			List<String> lines = new ArrayList<String>();
-			double tipValue = Double.valueOf(etTip.getText().toString());
+			int tipValue = sbTip.getProgress();
+//			double tipValue = Double.valueOf(etTip.getText().toString());
 			lines.add(String.valueOf(tipValue));
 			FileUtils.writeLines(vTipFile, lines);
+			
+			Toast.makeText(this, "Tip % Saved", Toast.LENGTH_SHORT).show();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}		
@@ -174,7 +159,7 @@ public class TipCalcActivity extends Activity {
 
 		try {
 			double amount = Double.valueOf(etAmount.getText().toString());
-			double tipPercent = Double.valueOf(etTip.getText().toString());
+			int tipPercent = sbTip.getProgress();
 			double personCount = Double.valueOf(etPartySize.getText().toString());
 			
 			totalTipAmount = (amount * tipPercent) / 100;
