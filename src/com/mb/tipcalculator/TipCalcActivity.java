@@ -76,6 +76,7 @@ public class TipCalcActivity extends Activity {
 			@Override
 			public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
 				tvTipSeekBarValue.setText(String.valueOf(progress));
+				doCalculationsAndUpdateResults();
 			}
 		});
 		
