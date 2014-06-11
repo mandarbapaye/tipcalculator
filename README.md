@@ -22,3 +22,6 @@ Notes:
 
 Spent some time making the UI look prettier by using widgets like SeekBar along with using a different in built Theme. Also created a couple of Color resources and used the same. Created an icon using iconmastr and used it as the application icon.
 
+Walkthrough of all user stories:
+
+![Video Walkthrough](anim_tipcalc_demo.gif)
